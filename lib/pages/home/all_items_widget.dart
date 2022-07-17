@@ -20,12 +20,18 @@ class AllIteamsWidget extends StatelessWidget {
             decoration: boxDecoration,
             child: Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset(
-                    "images/$i.png",
-                    height: 130,
-                    width: 130,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, "itemPage");
+                    //open item detail
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Image.asset(
+                      "images/$i.png",
+                      height: 130,
+                      width: 130,
+                    ),
                   ),
                 ),
                 Padding(
@@ -41,25 +47,22 @@ class AllIteamsWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: 8),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         child: Text("\$50",
                             style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.redAccent
-                            )),
+                                fontSize: 20, color: Colors.redAccent)),
                       ),
                       Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: darkBox,
-                            child: Icon(
-                              CupertinoIcons.cart_fill_badge_plus,
-                              color: whiteColor,
-                              size: 25,
-                            ),
-                          )
-                      
+                        padding: EdgeInsets.all(10),
+                        decoration: darkBox,
+                        child: Icon(
+                          CupertinoIcons.cart_fill_badge_plus,
+                          color: whiteColor,
+                          size: 25,
+                        ),
+                      )
                     ],
                   ),
                 )
